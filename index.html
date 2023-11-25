@@ -13,7 +13,6 @@
     <div id="p">456456</div>
     <script>
         let tg = window.Telegram.WebApp;
-        console.log(tg.version);
         let p = document.getElementById('p');
         let pop = document.getElementById('pop');
         let switch_button = document.getElementById('siq');
@@ -23,6 +22,7 @@
             tg.switchInlineQuery('123')
         });
         pop.addEventListener('click', () => {
+            p.innerHTML = tg.version;
             tg.showPopup(title='Pop', message='pop pop pop');
         })
 
