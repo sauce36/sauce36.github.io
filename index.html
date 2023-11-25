@@ -7,14 +7,17 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         const tg = new window.Telegram.WebApp;
+        const p = document.getElementById('p');
         const switch_button = document.getElementById('siq');
         switch_button.onclick(() => {
-            tg.switchInlineQuery('123123')
+            tg.switchInlineQuery('123123');
+            p.innerText = tg.version;
         })
     </script>
     <title>Document</title>
 </head>
 <body>
     <button id="siq">Switch inline query</button>
+    <div id="p"></div>
 </body>
 </html>
