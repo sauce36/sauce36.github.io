@@ -20,8 +20,12 @@ api.addEventListener('click', async () => {
     try {
         let call = await fetch('https://emerging-quality-raccoon.ngrok-free.app/initData', {
             method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': 'true'
+            }
         });
-        let result = await call.text;
+        let result = await call.text();
         data.innerHTML = result;
     } catch(error) {
         data.innerHTML = error;
