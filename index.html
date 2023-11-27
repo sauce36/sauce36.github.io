@@ -12,24 +12,6 @@
     <button id="pop">pop pop pop</button>
     <div id="p">456456</div>
     <div id="data">456456</div>
-    <script>
-        let tg = window.Telegram.WebApp;
-        let p = document.getElementById('p');
-        let pop = document.getElementById('pop');
-        let data = document.getElementById('data');
-        let switch_button = document.getElementById('siq');
-
-        switch_button.addEventListener('click', () => {
-            p.innerHTML = '1';
-            tg.switchInlineQuery('123')
-        });
-        pop.addEventListener('click', () => {
-            p.innerHTML = tg.version;
-            init = tg.initDataUnsafe;
-            data.innerHTML = init.query_id;
-            tg.showPopup({title: 'Pop', message: 'po po po'});
-        });
-
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
