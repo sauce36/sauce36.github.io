@@ -11,10 +11,12 @@
     <button id="siq">Switch inline query</button>
     <button id="pop">pop pop pop</button>
     <div id="p">456456</div>
+    <div id="data">456456</div>
     <script>
         let tg = window.Telegram.WebApp;
         let p = document.getElementById('p');
         let pop = document.getElementById('pop');
+        let data = document.getElementById('data');
         let switch_button = document.getElementById('siq');
 
         switch_button.addEventListener('click', () => {
@@ -23,8 +25,9 @@
         });
         pop.addEventListener('click', () => {
             p.innerHTML = tg.version;
+            data.innerHTML = tg.initDataUnsafe;
             tg.showPopup({title: 'Pop', message: 'po po po'});
-        })
+        });
 
     </script>
 </body>
