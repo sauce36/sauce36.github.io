@@ -25,7 +25,8 @@
         });
         pop.addEventListener('click', () => {
             p.innerHTML = tg.version;
-            data.innerHTML = tg.initDataUnsafe;
+            init = tg.initDataUnsafe;
+            data.innerHTML = init.query_id;
             tg.showPopup({title: 'Pop', message: 'po po po'});
         });
 
