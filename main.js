@@ -19,11 +19,11 @@ pop.addEventListener('click', () => {
 api.addEventListener('click', async () => {
     try {
         let call = await fetch('https://emerging-quality-raccoon.ngrok-free.app/initData', {
-            method: 'POST',
+            method: 'GET',
             headers: {
             'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            //body: JSON.stringify(data),
         });
         let result = await call.json();
         data.innerHTML = result;
