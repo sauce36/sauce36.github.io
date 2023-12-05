@@ -1,0 +1,72 @@
+body.hide {
+    display: block;
+    overflow: hidden;
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: 48vw 48vw;
+    gap: 8px;
+    grid-auto-rows: minmax(40vh, auto);
+    justify-content: center;
+    filter: blur(0);
+    transition: all .3s ease-in;
+}
+
+#cards.blur {
+    filter: blur(1.5rem);
+    transition: all .3s ease-in;
+}
+
+#cardsDesc{
+    position: fixed;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    width: 100svw;
+    height: 100svh;
+    right: 0;
+    transition: right .3s ease-in-out;
+}
+
+#cardsDesc.hide {
+    overflow: hidden;
+    display: block;
+    right: -100svw;
+    transition: right .3s ease-in-out;
+}
+
+.card {
+    filter: blur(0);
+    transition: all .3s ease-in;
+    box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.123);
+}
+
+.card h3 {
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+}
+
+.card img {
+    display: block;
+    width: 44vw;
+    height: 44vw;
+    object-fit:cover;
+    margin-top: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardDesc img {
+    display: block;
+    width: 44vw;
+    height: 44vw;
+    object-fit:cover;
+    margin-top: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hide {
+    display: none;
+}
