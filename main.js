@@ -42,9 +42,10 @@ function toggleClass(elem, cName) {
     elem.classList.toggle(cName);
 };
 
-
+//https://emerging-quality-raccoon.ngrok-free.app
+//http://127.0.0.1:8000
 async function getGoods() {
-    let resp = await fetch('http://127.0.0.1:8000/getGoods', {
+    let resp = await fetch('https://emerging-quality-raccoon.ngrok-free.app/getGoods', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
