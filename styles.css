@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif, 'Anonymous Pro', monospace;
+}
+
+body {
+    margin: 8px;
+}
+
 body.hide {
     display: block;
     overflow: hidden;
@@ -7,10 +18,16 @@ body.hide {
     display: grid;
     grid-template-columns: 48vw 48vw;
     gap: 8px;
-    grid-auto-rows: minmax(40vh, auto);
+    grid-auto-rows: minmax(43.3svh, auto);
     justify-content: center;
     filter: blur(0);
     transition: all .3s ease-in;
+}
+
+@media screen and (max-height: 854px) {
+    #cards {
+        grid-auto-rows: minmax(90vw, auto);
+    }
 }
 
 #cards.blur {
@@ -36,25 +53,72 @@ body.hide {
     transition: right .3s ease-in-out;
 }
 
-.card {
-    filter: blur(0);
-    transition: all .3s ease-in;
+.item {
+    position: relative;
     box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.123);
 }
 
-.card h3 {
+.item .card {
+    position: absolute;
+    height: 100%;
+    filter: blur(0);
+    transition: all .3s ease-in;
+    text-align: center;
+    z-index: 1;
+}
+
+.item .card h3 {
     margin-top: 3vw;
     margin-bottom: 3vw;
 }
 
-.card img {
+.item .card img {
     display: block;
     width: 44vw;
     height: 44vw;
+    margin-top: 12.4vw;
     object-fit:cover;
-    margin-top: 5vw;
     margin-left: auto;
     margin-right: auto;
+}
+
+.item .card p.price {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.item button.like {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    width: 5vw;
+    height: 5vw;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    z-index: 2;
+}
+
+.item button.like svg {
+    width: 100%;
+    height: 100%;
+}
+
+.item button.like svg path {
+    transform: scale(0.02);
+    fill: transparent;
+    stroke-width: 70px;
+    stroke: rgba(0, 0, 0, 0.842);
+    transition: fill .11s ease-out;
+}
+
+.item button.like.active svg path {
+    transform: scale(0.02);
+    fill: black;
+    stroke-width: 0;
+    stroke: rgba(0, 0, 0, 0);
+    transition: fill .25s ease-out;
 }
 
 .cardDesc img {
